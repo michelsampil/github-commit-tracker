@@ -7,6 +7,6 @@ export class AppController {
 
   @Get()
   getCommits(): Promise<string> {
-    return this.appService.getHello();
+    return this.appService.getCommits();
   }
 }

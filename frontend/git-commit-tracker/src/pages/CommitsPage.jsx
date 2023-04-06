@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const CommitsPage = () => {
     
-    const url = 'http://localhost:3000/';
+    const url = 'http://localhost:3006/';
     const [commits, setCommits] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
