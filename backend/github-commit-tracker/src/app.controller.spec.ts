@@ -15,8 +15,12 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return all the repos commits', () => {
+      appController;
+      // TODO
+    });
+    it(`should return an error because the repos doesn't exist`, () => {
+      // TODO
     });
   });
 });
