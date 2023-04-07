@@ -4,11 +4,10 @@ import React from "react";
 export const ListItem = (props) => {
 
     const { itemData } = props;
-    console.log('itemData: ', itemData);
-    return(<li className={`styles.listContainer`}>
+    return(<li className={`styles.listContainer`} style={{padding: '2rem', listStyle: 'none'}}>
         <div> {itemData?.author} </div>
+        <a href={itemData?.url}> {itemData?.message} </a>
         <div> {Date(itemData?.date)} </div>
         <div> {itemData?.branch} </div>
-        <div> {itemData?.url} </div>
     </li>)
 }
