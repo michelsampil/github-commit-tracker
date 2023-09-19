@@ -51,29 +51,31 @@ export class AppService {
     // return getBranches();
 
     const octokit = new Octokit({});
+    const payload = {
+      owner: 'michelsampil',
+      repo: 'github-commit-tracker',
+      per_page: 1,
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    };
 
     const data = await octokit.paginate(
-      'GET /repos/michelsampil/github-commit-tracker/commits',
-      {
-        owner: 'michelsampil',
-        repo: 'github-commit-tracker',
-        per_page: 100,
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-      },
+      `GET /repos/${payload.owner}/${payload.repo}/commits/feature/commits-page`,
+      payload,
     );
+
     const commits = data.map((e: any) => {
       return {
         author: e.commit.author.name,
         date: e.commit.author.date,
         message: e.commit.message,
         url: e.html_url,
-        branch: 'aaaa',
+        branch: 'a',
       };
     });
 
-    console.log('commits: ', commits);
+    console.log('data: ', data);
     return JSON.stringify(commits);
 
     console.log(data);

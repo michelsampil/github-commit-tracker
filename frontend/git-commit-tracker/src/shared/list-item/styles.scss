@@ -1,13 +1,15 @@
-@use 'styles/_colors.scss'; // assuming a styles directory under src/
+// @use 'styles/_colors.scss'; // assuming a styles directory under src/
 
-.listContainer {
+.listItem {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
     padding: 2px 16px;
+    list-style: 'none';
+    margin: 20px;
 }
 
 /* On mouse-over, add a deeper shadow */
-.listContainer:hover {
+.listItem:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }

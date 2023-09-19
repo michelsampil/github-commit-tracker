@@ -1,12 +1,13 @@
 import React from "react";
 import { ListItem } from "../list-item/ListItem";
+import "./styles.scss";
 
 export const List = (props) => {
     const { commits }= props;
-    console.log('commits: ', commits);
     return (<ul>
+        <div className='listContainer'> SAPBE </div>
         { commits ? commits.map((e) => {
-            return <ListItem itemData={e}/>
+            return <ListItem className='listContainer' itemData={e}/>
         }) : <div> No commtis</div>}
     </ul>)
 }
